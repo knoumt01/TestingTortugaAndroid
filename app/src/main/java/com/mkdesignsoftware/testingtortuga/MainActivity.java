@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.content.Intent;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -13,24 +14,7 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        // defining the button and creating an action listener to start app
-        final Button startButton = (Button) findViewById(R.id.btn_start);
-        startButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                // perform action on click
-            }
-        });
-
-        // defining the settings button and creating an action listener to go to settings menu
-        final Button settingsButton = (Button) findViewById(R.id.btn_settings);
-        settingsButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                // perform action on click
-            }
-        });
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -52,5 +36,13 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void goToStartMainActivity() {
+        Intent intent = new Intent(this, StartMainActivity.class);
+    }
+
+    public void goToSettingsActivity() {
+        Intent intent = new Intent(this, SettingsActivity.class);
     }
 }
