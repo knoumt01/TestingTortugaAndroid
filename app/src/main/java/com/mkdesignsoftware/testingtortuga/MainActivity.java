@@ -40,9 +40,12 @@ public class MainActivity extends ActionBarActivity {
 
     public void goToStartMainActivity() {
         Intent intent = new Intent(this, StartMainActivity.class);
+        startActivity(intent);
     }
 
     public void goToSettingsActivity() {
+
         Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
     }
 }
