@@ -17,24 +17,21 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SettingsActivity"
-            android:label="@string/title_activity_settings" >
-        </activity>
-        <activity
-            android:name=".StartMainActivity"
-            android:label="@string/title_activity_start_main"
-            android:parentActivityName=".MainActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mkdesignsoftware.testingtortuga.MainActivity" />
-        </activity>
-        <activity
             android:name=".StartActivity"
-            android:label="@string/title_activity_start"
-            android:parentActivityName=".MainActivity" >
+            android:label="@string/title_activity_start" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mkdesignsoftware.testingtortuga.MainActivity" />
+                android:value="com.mkdesignsoftware.testingtortuga.MainActivity"
+
+                android:parentActivityName=".MainActivity"/>
+        </activity>
+        <activity
+            android:name=".Settings_and_Contact_Activity"
+            android:label="@string/title_activity_settings_and__contact_" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mkdesignsoftware.testingtortuga.MainActivity"
+                android:parentActivityName=".MainActivity" />
         </activity>
     </application>
 
