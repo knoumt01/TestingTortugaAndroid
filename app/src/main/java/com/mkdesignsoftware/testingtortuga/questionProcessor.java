@@ -5,33 +5,31 @@ package com.mkdesignsoftware.testingtortuga;
  * Shared class across all Testing Tortuga for _____ products.
  * Created by mkdesign on 4/21/2015.
  */
-/*
-public class questionProcessor {
 
-    String[] questionNumber;
-    String[] question;
-    String[] answerA;
-    String[] answerB;
-    String[] answerC;
-    String[] answerD;
-    String[] answerE;
-    String[] correctAnswer;
+import android.app.Activity;
+import java.io.InputStream;
+import java.io.*;
+import java.util.*;
+
+public class questionProcessor extends Activity {
+
+    String question;
+    String answerA;
+    String answerB;
+    String answerC;
+    String answerD;
+    String answerE;
+    String correctAnswer;
     int numberOfQuestions;
 
-    public void loadQuestions throws FileNotException {
-        String TextData = textReader.readLine();
-        StringTokenizer st = new StringTokenizer(TextData, "|", false);
-
-        for (int i = 0; i < numberOfQuestions; i++) {
-            questionNumber[i] = st.nextToken();
-            question[i] = st.nextToken();
-            answerA[i] = st.nextToken();
-            answerB[i] = st.nextToken();
-            answerC[i] = st.nextToken();
-            answerD[i] = st.nextToken();
-            answerE[i] = st.nextToken();
-            correctAnswer[i] = st.nextToken();
-        }
+    public questionProcessor(String t_question, String t_answerA, String t_answerB, String t_answerC,
+                             String t_answerD, String t_answerE, String t_correctAnswer) {
+        t_question = question;
+        t_answerA = answerA;
+        t_answerB = answerB;
+        t_answerC = answerC;
+        t_answerD = answerD;
+        t_answerE = answerE;
+        t_correctAnswer = correctAnswer;
     }
 }
-*/

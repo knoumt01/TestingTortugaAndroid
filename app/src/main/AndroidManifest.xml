@@ -21,17 +21,16 @@
             android:label="@string/title_activity_start" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mkdesignsoftware.testingtortuga.MainActivity"
-
-                android:parentActivityName=".MainActivity"/>
+                android:parentActivityName=".MainActivity"
+                android:value="com.mkdesignsoftware.testingtortuga.MainActivity" />
         </activity>
         <activity
-            android:name=".Settings_and_Contact_Activity"
-            android:label="@string/title_activity_settings_and__contact_" >
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mkdesignsoftware.testingtortuga.MainActivity"
-                android:parentActivityName=".MainActivity" />
+                android:value="com.mkdesignsoftware.testingtortuga.MainActivity" />
         </activity>
     </application>
 

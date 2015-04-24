@@ -45,7 +45,7 @@ public class MainActivity extends ActionBarActivity {
 
     public void goToSettingsActivity() {
 
-        Intent intent = new Intent(this, Settings_and_Contact_Activity.class);
+        Intent intent = new Intent(this, SettingsActivity.class);
         startActivity(intent);
     }
 }
