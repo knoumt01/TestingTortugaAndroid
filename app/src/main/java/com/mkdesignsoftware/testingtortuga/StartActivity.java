@@ -5,7 +5,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import java.util.StringTokenizer;
-import java.io.FileInputStream;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
@@ -14,7 +15,8 @@ public class StartActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        loadQuestions();
+        //loadQuestions();
+        //loadProblems();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.start_activity);
     }
@@ -47,23 +49,20 @@ public class StartActivity extends ActionBarActivity {
      */
 
     int numberOfQuestions = 11;
-    String[] question = new String[numberOfQuestions];
-    String[] answerA = new String[numberOfQuestions];
-    String[] answerB = new String[numberOfQuestions];
-    String[] answerC = new String[numberOfQuestions];
-    String[] answerD = new String[numberOfQuestions];
-    String[] answerE = new String[numberOfQuestions];
+    public String[] question = new String[numberOfQuestions];
+    public String[] answerA = new String[numberOfQuestions];
+    public String[] answerB = new String[numberOfQuestions];
+    public String[] answerC = new String[numberOfQuestions];
+    public String[] answerD = new String[numberOfQuestions];
+    public String[] answerE = new String[numberOfQuestions];
     String[] correctAnswer = new String[numberOfQuestions];
-    int counter = 0;
-    int correct;
-    int incorrect;
-    float percentage;
+
 
     public void loadQuestions() throws FileNotFoundException, IOException {
-        FileInputStream textReader = openFileInput("questions.txt");
-        byte[] data = new byte[128];
-        textReader.read(data);
-        StringTokenizer st = new StringTokenizer(data, "|", false);
+        FileReader fr = new FileReader("questions.txt");
+        BufferedReader textReader = new BufferedReader(fr);
+        String textData = textReader.readLine();
+        StringTokenizer st = new StringTokenizer(textData, "|", false);
 
         for (int i = 0; i < numberOfQuestions; i++) {
             question[i] = st.nextToken();
@@ -74,5 +73,14 @@ public class StartActivity extends ActionBarActivity {
             answerE[i] = st.nextToken();
             correctAnswer[i] = st.nextToken();
         }
+    }
+
+    int counter = 0;
+    Problem probList[];
+    public void loadProblems()  {
+        counter = (int)(numberOfQuestions * Math.random());
+        probList[counter] = new Problem(question[counter],answerA[counter],
+                answerB[counter],answerC[counter],answerD[counter],answerE[counter],
+                correctAnswer[counter]);
     }
 }
