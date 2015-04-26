@@ -9,13 +9,18 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.FileOutputStream;
+import java.io.FileInputStream;
+import android.content.Context;
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
 
 
 public class StartActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //loadQuestions();
+        loadQuestions();
         //loadProblems();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.start_activity);
@@ -58,10 +63,14 @@ public class StartActivity extends ActionBarActivity {
     String[] correctAnswer = new String[numberOfQuestions];
 
 
-    public void loadQuestions() throws FileNotFoundException, IOException {
-        FileReader fr = new FileReader("questions.txt");
-        BufferedReader textReader = new BufferedReader(fr);
-        String textData = textReader.readLine();
+    public void loadQuestions()  {
+        // modified previous Buffered Reader / File Reader for compatibility with Android
+        FileInputStream fs;
+        String strFilename = "questions.txt";
+        FileInputStream fs = openFileInput(strFilename);
+        StringBuffer sBuffer = new StringBuffer();
+        BufferedReader dataIO = new BufferedReader(new InputStreamReader(fs));
+        String textData = dataIO.readLine();
         StringTokenizer st = new StringTokenizer(textData, "|", false);
 
         for (int i = 0; i < numberOfQuestions; i++) {
