@@ -1,0 +1,56 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.mkdesignsoftware.testingtortuga.Results"
+    android:id="@+id/"
+    android:background="#ff000000">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Results"
+        android:textColor="#fffdff00"
+        android:typeface="monospace"
+        android:textStyle="bold"
+        android:textSize="30dp" />
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ratingBar"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:rating="5"
+        android:numStars="5"
+        style="@style/Base.Widget.AppCompat.RatingBar"
+        android:clickable="true"
+        android:background="#ff0012ff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Statistics:"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/editText"
+        android:layout_centerHorizontal="true"
+        android:textColor="#fffdff00"
+        android:textStyle="bold" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/statistics"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp"
+        android:text="X/X - XX%"
+        android:textColor="#fffdff00" />
+
+</RelativeLayout>

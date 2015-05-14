@@ -12,4 +12,5 @@
     <string name="title_activity_start">StartActivity</string>
     <string name="title_activity_settings">SettingsActivity</string>
     <string name="name">Name</string>
+    <string name="title_activity_results">Results</string>
 </resources>
