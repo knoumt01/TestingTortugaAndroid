@@ -6,7 +6,7 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.mkdesignsoftware.testingtortuga.StartMainActivity"
     android:background="#ff000000"
-    android:id="@+id/">
+    android:id="@+id/questionSpace">
 
     <Button
         android:layout_width="wrap_content"

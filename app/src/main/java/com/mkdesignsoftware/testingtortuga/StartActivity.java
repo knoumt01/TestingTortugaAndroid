@@ -2,6 +2,7 @@ package com.mkdesignsoftware.testingtortuga;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import java.util.StringTokenizer;
@@ -31,16 +32,15 @@ public class StartActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         loadQuestions();
-        //loadProblems();
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.start_activity);
+        setContentView(R.layout.activity_main   );
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_start, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
@@ -64,17 +64,23 @@ public class StartActivity extends ActionBarActivity {
      */
 
 
-    public void loadQuestions()  throws IOException {
+    public void loadQuestions()  {
 
 
 
         // modified previous Buffered Reader / File Reader for compatibility with Android
-        FileInputStream fs;
+
         String strFilename = "questions.txt";
-        FileInputStream fs = openFileInput(strFilename);
-        StringBuffer sBuffer = new StringBuffer();
-        BufferedReader dataIO = new BufferedReader(new InputStreamReader(fs));
-        String textData = dataIO.readLine();
+        FileInputStream fs = null;
+        String textData = null;
+        
+        try {
+            fs = openFileInput(strFilename);
+            StringBuffer sBuffer = new StringBuffer();
+            BufferedReader dataIO = new BufferedReader(new InputStreamReader(fs));
+            textData = dataIO.readLine();
+        } catch(IOException e) { e.printStackTrace(); }
+
         StringTokenizer st = new StringTokenizer(textData, "|", false);
 
         for (int i = 0; i < numberOfQuestions; i++) {
