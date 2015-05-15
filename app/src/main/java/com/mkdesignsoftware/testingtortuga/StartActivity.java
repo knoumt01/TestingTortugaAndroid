@@ -18,6 +18,16 @@ import java.io.BufferedReader;
 
 public class StartActivity extends ActionBarActivity {
 
+
+    int numberOfQuestions = 11;
+    public String[] question = new String[numberOfQuestions];
+    public String[] answerA = new String[numberOfQuestions];
+    public String[] answerB = new String[numberOfQuestions];
+    public String[] answerC = new String[numberOfQuestions];
+    public String[] answerD = new String[numberOfQuestions];
+    public String[] answerE = new String[numberOfQuestions];
+    String[] correctAnswer = new String[numberOfQuestions];
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         loadQuestions();
@@ -57,16 +67,7 @@ public class StartActivity extends ActionBarActivity {
     public void loadQuestions()  throws IOException {
 
 
-        int numberOfQuestions = 11;
-        public String[] question = new String[numberOfQuestions];
-        public String[] answerA = new String[numberOfQuestions];
-        public String[] answerB = new String[numberOfQuestions];
-        public String[] answerC = new String[numberOfQuestions];
-        public String[] answerD = new String[numberOfQuestions];
-        public String[] answerE = new String[numberOfQuestions];
-        String[] correctAnswer = new String[numberOfQuestions];
 
-        
         // modified previous Buffered Reader / File Reader for compatibility with Android
         FileInputStream fs;
         String strFilename = "questions.txt";
