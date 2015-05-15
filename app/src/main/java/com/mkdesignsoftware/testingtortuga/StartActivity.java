@@ -53,17 +53,20 @@ public class StartActivity extends ActionBarActivity {
      * Question loading functions and declarations
      */
 
-    int numberOfQuestions = 11;
-    public String[] question = new String[numberOfQuestions];
-    public String[] answerA = new String[numberOfQuestions];
-    public String[] answerB = new String[numberOfQuestions];
-    public String[] answerC = new String[numberOfQuestions];
-    public String[] answerD = new String[numberOfQuestions];
-    public String[] answerE = new String[numberOfQuestions];
-    String[] correctAnswer = new String[numberOfQuestions];
+
+    public void loadQuestions()  throws IOException {
 
 
-    public void loadQuestions()  {
+        int numberOfQuestions = 11;
+        public String[] question = new String[numberOfQuestions];
+        public String[] answerA = new String[numberOfQuestions];
+        public String[] answerB = new String[numberOfQuestions];
+        public String[] answerC = new String[numberOfQuestions];
+        public String[] answerD = new String[numberOfQuestions];
+        public String[] answerE = new String[numberOfQuestions];
+        String[] correctAnswer = new String[numberOfQuestions];
+
+        
         // modified previous Buffered Reader / File Reader for compatibility with Android
         FileInputStream fs;
         String strFilename = "questions.txt";
